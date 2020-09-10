@@ -1,0 +1,7 @@
+Important things:
+1. Reform the sentence should place all the words in the original sequence.
+2. Check the correctness of the sentence should be invoked only after selecting all the words.
+3. Get correct sentence should be invoked only after a wrong sentence formation.
+4. On clicking get correct sentence button, it should become Hide the correct sentences.
+5. On clicking Hide the correct sentences button, it should revert back to Get correct sentence button 
+	while the correct sentences should be hidden.
