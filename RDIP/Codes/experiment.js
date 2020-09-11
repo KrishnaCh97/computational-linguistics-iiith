@@ -16,25 +16,39 @@ var hin = [["राम और श्याम बाजार गयें","र
 ["बिल्लियों को मारकर कुत्ता सो गया","मारकर बिल्लियों को कुत्ता सो गया","बिल्लियों को मारकर सो गया कुत्ता","मारकर बिल्लियों को सो गया कुत्ता","कुत्ता सो गया बिल्लियों को मारकर","कुत्ता सो गया मारकर बिल्लियों को","सो गया कुत्ता बिल्लियों को मारकर","सो गया कुत्ता मारकर बिल्लियों को"],
 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
 ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]]
-
+var randWord;
 function show(){
 var text = "Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)";
 var lan = document.getElementById('language').value;
 if((lan==="English")||(lan==="Hindi")){
 	document.getElementById('obj').innerHTML = text;
-	var sent = randomSent();
-	var randWord = randomWord2(sent);
-	document.getElementById('randText').innerHTML = "";
-	document.getElementById('answerArea').innerHTML = "";
-	for(i=0;i<randWord.length;i++){
-	document.getElementById('randText').innerHTML += ("<button id='btn"+i+"' value='"+randWord[i]+"' onclick='addWord("+i+")'>"+randWord[i]+"</button>")
-	}
+	var sent = randomSentence();
+	randWord = randomWord(sent);
+	var set = formSent(randWord);
 }
 else{
 	alert("Select language");
 }
 }
-function randomSent(){
+function formSent(){
+	document.getElementById('randText').innerHTML = "";
+	document.getElementById('answerArea').innerHTML = "";
+	document.getElementById('ansHead').innerHTML = "";
+for(i=0;i<randWord.length;i++){
+	document.getElementById('randText').innerHTML += ("<button id='btn"+i+"' value='"+randWord[i]+"' onclick='addWord("+i+")'>"+randWord[i]+"</button>")
+	}
+}
+function reformSent(){
+	document.getElementById('randText').innerHTML = "";
+	document.getElementById('answerArea').innerHTML = "";
+	document.getElementById('ansHead').innerHTML = "";
+for(i=0;i<randWord.length;i++){
+	document.getElementById('randText').innerHTML += ("<button id='btn"+i+"' value='"+randWord[i]+"' onclick='addWord("+i+")'>"+randWord[i]+"</button>")
+	}
+	document.getElementById('reform').style.display = "none";
+}
+
+function randomSentence(){
 	var lan = document.getElementById('language').value;
 	if(lan==="English"){
 		var sent = Math.floor(Math.random()*eng.length);
@@ -47,24 +61,6 @@ function randomSent(){
 }
 function randomWord(sent){
 	var arr = sent.split(" ");
-	var len = arr.length;
-	console.log(len);
-	var temp = "";
-	while(len>0){
-		var ran = Math.floor(Math.random()*(len));
-		console.log(ran);
-		if(temp.length===0)
-		temp += arr[ran];
-		else
-			temp += " "+arr[ran];
-		var delarr = arr.splice(ran,1);
-		len--;
-	}
-	temp = temp.trim();
-	return temp;
-}
-function randomWord2(sent){
-	var arr = sent.split(" ");
 	var temp = [];
 	while(arr.length>0){
 		var ran = Math.floor(Math.random()*(arr.length));
@@ -75,8 +71,12 @@ function randomWord2(sent){
 }
 function addWord(x){
 	var word = document.getElementById("btn"+x).value;
+	document.getElementById('ansHead').innerHTML = "Formed Sentence (after selecting words):";
 	if(document.getElementById('answerArea').value==="")
-	document.getElementById('answerArea').innerHTML += word;
+	document.getElementById('answerArea').innerHTML = word;
 	else
 		document.getElementById('answerArea').innerHTML += " "+ word;
+	document.getElementById('btn'+x).style.display = "none";
+	document.getElementById('reform').style.display = "block";
+	document.getElementById('reform').innerHTML = ("<button id='reformbut' onclick='reformSent()'>Re-form the sentence</button>")
 }
