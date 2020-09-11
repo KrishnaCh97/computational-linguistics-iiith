@@ -16,7 +16,35 @@ var hin = [["राम और श्याम बाजार गयें","र
 ["बिल्लियों को मारकर कुत्ता सो गया","मारकर बिल्लियों को कुत्ता सो गया","बिल्लियों को मारकर सो गया कुत्ता","मारकर बिल्लियों को सो गया कुत्ता","कुत्ता सो गया बिल्लियों को मारकर","कुत्ता सो गया मारकर बिल्लियों को","सो गया कुत्ता बिल्लियों को मारकर","सो गया कुत्ता मारकर बिल्लियों को"],
 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
 ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]]
+
+
 var randWord;
+var sentence = [];
+var sent;
+var lan;
+
+function randomSentence(){
+	lan = document.getElementById('language').value;
+	if(lan==="English"){
+		sent = Math.floor(Math.random()*eng.length);
+		return  eng[sent][0];
+	}
+	else if(lan==="Hindi"){
+		sent = Math.floor(Math.random()*hin.length);
+		return  hin[sent][0];
+	}
+}
+function randomWord(sent){
+	var arr = sent.split(" ");
+	var temp = [];
+	while(arr.length>0){
+		var ran = Math.floor(Math.random()*(arr.length));
+		temp.push(arr[ran]);
+		arr.splice(ran,1);
+	}
+	return temp;
+}
+
 function show(){
 var text = "Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)";
 var lan = document.getElementById('language').value;
@@ -34,49 +62,67 @@ function formSent(){
 	document.getElementById('randText').innerHTML = "";
 	document.getElementById('answerArea').innerHTML = "";
 	document.getElementById('ansHead').innerHTML = "";
-for(i=0;i<randWord.length;i++){
+	for(i=0;i<randWord.length;i++){
 	document.getElementById('randText').innerHTML += ("<button id='btn"+i+"' value='"+randWord[i]+"' onclick='addWord("+i+")'>"+randWord[i]+"</button>")
 	}
 }
 function reformSent(){
-	document.getElementById('randText').innerHTML = "";
-	document.getElementById('answerArea').innerHTML = "";
-	document.getElementById('ansHead').innerHTML = "";
-for(i=0;i<randWord.length;i++){
-	document.getElementById('randText').innerHTML += ("<button id='btn"+i+"' value='"+randWord[i]+"' onclick='addWord("+i+")'>"+randWord[i]+"</button>")
-	}
-	document.getElementById('reform').style.display = "none";
+	formSent();
+	sentence = [];
+	document.getElementById('reformbut').style.display = "none";
+	document.getElementById('checkbut').style.display = "none";
 }
 
-function randomSentence(){
-	var lan = document.getElementById('language').value;
-	if(lan==="English"){
-		var sent = Math.floor(Math.random()*eng.length);
-		return  eng[sent][0];
-	}
-	else if(lan==="Hindi"){
-		var sent = Math.floor(Math.random()*hin.length);
-		return  hin[sent][0];
-	}
-}
-function randomWord(sent){
-	var arr = sent.split(" ");
-	var temp = [];
-	while(arr.length>0){
-		var ran = Math.floor(Math.random()*(arr.length));
-		temp.push(arr[ran]);
-		arr.splice(ran,1);
-	}
-	return temp;
-}
+
 function addWord(x){
 	var word = document.getElementById("btn"+x).value;
 	document.getElementById('ansHead').innerHTML = "Formed Sentence (after selecting words):";
+
 	if(document.getElementById('answerArea').value==="")
 	document.getElementById('answerArea').innerHTML = word;
 	else
 		document.getElementById('answerArea').innerHTML += " "+ word;
+
+	sentence.push(word);
+	if(sentence.length===randWord.length){ 
+		document.getElementById('checkbut').style.display = "block";
+	}
+	else{
+		document.getElementById('checkbut').style.display = "none";
+	}
 	document.getElementById('btn'+x).style.display = "none";
-	document.getElementById('reform').style.display = "block";
-	document.getElementById('reform').innerHTML = ("<button id='reformbut' onclick='reformSent()'>Re-form the sentence</button>")
+	document.getElementById('reformbut').style.display = "block";
+	
+}
+
+function checkCorrect(){
+	var array;
+	var formedSentence = sentence.join(" ");
+	formedSentence = formedSentence.trim();
+	console.log(formedSentence);
+	if(lan==="English"){
+		array = eng[sent];
+		for(i=0;i<array.length;i++){
+			if(array[i]===formedSentence){
+					console.log(array[i]);
+				document.getElementById("rightResult").innerHTML = "Right Answer";
+				document.getElementById("wrongResult").innerHTML = "";
+				return true;
+			}
+		}
+		document.getElementById("wrongResult").innerHTML = "Wrong Answer";
+		document.getElementById("rightResult").innerHTML = "";
+	}
+	else if(lan==="Hindi"){
+		array = hin[sent];
+		for(i=0;i<array.length;i++){
+			console.log(array[i]);
+			if(array[i]===formedSentence){
+				document.getElementById("rightResult").innerHTML = "Right Answer";
+				return true;
+			}
+				
+		}
+		document.getElementById("wrongResult").innerHTML = "Wrong Answer";
+	}
 }
