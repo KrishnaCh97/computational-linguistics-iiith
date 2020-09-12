@@ -16,7 +16,7 @@ button{
 #heading{
 	text-align: left;
 }
-#reformbut,#checkbut,#getCorrect{
+#reformbut,#checkbut,#getCorrect,#hideCorrect{
 	display: none;
 	margin: auto;
 }

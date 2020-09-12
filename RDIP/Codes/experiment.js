@@ -69,9 +69,14 @@ function formSent(){
 function reformSent(){
 	formSent();
 	sentence = [];
+	document.getElementById('getCorrect').innerHTML = "Get Correct Sentence";
 	document.getElementById('reformbut').style.display = "none";
 	document.getElementById('checkbut').style.display = "none";
 	document.getElementById('getCorrect').style.display = "none";
+	document.getElementById('answerArea').innerHTML = "";
+	document.getElementById('rightResult').innerHTML = "";
+	document.getElementById('wrongResult').innerHTML = "";
+	document.getElementById('correctSentence').innerHTML = "";
 }
 
 
@@ -127,4 +132,23 @@ function checkCorrect(){
 		document.getElementById("rightResult").innerHTML = "";
 		document.getElementById("getCorrect").style.display = "block";
 	}
+}
+
+function getCorrect(){
+	if(document.getElementById('getCorrect').innerHTML==="Get Correct Sentence"){
+	array = eng[sent];
+	for (i = 0; i < array.length; i++) {
+	document.getElementById('correctSentence').innerHTML += array[i]+"<br>";
+	}
+	document.getElementById('getCorrect').innerHTML = "Hide the Correct Sentence";
+}else if(document.getElementById('getCorrect').innerHTML === "Hide the Correct Sentence"){
+	document.getElementById('correctSentence').innerHTML = "";
+	document.getElementById('getCorrect').innerHTML = "Get Answers";
+}else if(document.getElementById('getCorrect').innerHTML === "Get Answers"){
+	array = eng[sent];
+	for (i = 0; i < array.length; i++) {
+	document.getElementById('correctSentence').innerHTML += array[i]+"<br>";
+	}
+	document.getElementById('getCorrect').innerHTML = "Hide the Correct Sentence";
+}
 }
