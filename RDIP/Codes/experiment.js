@@ -71,6 +71,7 @@ function reformSent(){
 	sentence = [];
 	document.getElementById('reformbut').style.display = "none";
 	document.getElementById('checkbut').style.display = "none";
+	document.getElementById('getCorrect').style.display = "none";
 }
 
 
@@ -99,30 +100,31 @@ function checkCorrect(){
 	var array;
 	var formedSentence = sentence.join(" ");
 	formedSentence = formedSentence.trim();
-	console.log(formedSentence);
 	if(lan==="English"){
 		array = eng[sent];
 		for(i=0;i<array.length;i++){
 			if(array[i]===formedSentence){
-					console.log(array[i]);
-				document.getElementById("rightResult").innerHTML = "Right Answer";
+				document.getElementById("rightResult").innerHTML = "Right Answer!!!";
 				document.getElementById("wrongResult").innerHTML = "";
 				return true;
 			}
 		}
-		document.getElementById("wrongResult").innerHTML = "Wrong Answer";
+		document.getElementById("wrongResult").innerHTML = "Wrong Answer!!!";
 		document.getElementById("rightResult").innerHTML = "";
+		document.getElementById("getCorrect").style.display = "block";
 	}
 	else if(lan==="Hindi"){
 		array = hin[sent];
 		for(i=0;i<array.length;i++){
-			console.log(array[i]);
 			if(array[i]===formedSentence){
-				document.getElementById("rightResult").innerHTML = "Right Answer";
+				document.getElementById("rightResult").innerHTML = "Right Answer!!!";
+				document.getElementById("wrongResult").innerHTML = "";
 				return true;
 			}
 				
 		}
-		document.getElementById("wrongResult").innerHTML = "Wrong Answer";
+		document.getElementById("wrongResult").innerHTML = "Wrong Answer!!!";
+		document.getElementById("rightResult").innerHTML = "";
+		document.getElementById("getCorrect").style.display = "block";
 	}
 }
