@@ -1,0 +1,114 @@
+body{
+	text-align: center;
+	width: 70%;
+	height: auto;
+	position: absolute;
+	left: 15%;
+	background-color: #01284d;
+	margin-top: 0;
+}
+
+button{
+	margin: 10px;
+}
+
+select{
+	text-align: center;
+	display: none;
+}
+
+.heading{
+	text-align: left;
+	color: white;
+	background-color: #0073e6;
+	height: auto;
+	padding-bottom: 0px;
+	margin-top: 0px;
+}
+.heading a{
+	color: white;
+	text-decoration: none;
+	padding-left: 15px;
+	font-family: sans-serif;
+}
+.heading img{
+	width: 100%;
+}
+.heading h3{
+	width: 55%;
+}
+.heading h3:hover{
+	background-color: #004d99;
+	color: white
+}
+
+.noBullets{
+	list-style-type: none;
+	text-align: left;
+	color: white;
+	height: 3px;
+	padding-top: 0;
+}
+.noBullets ul li{
+display: inline;
+}
+.noBullets a{
+	color: white;
+	text-decoration: none;
+}
+.main{
+	background-color: #e6f2ff;
+	height: auto;
+}
+.main h1{
+	text-align: left;
+	font-weight: normal;
+	padding-top: 10px;
+	margin-left: 20px;
+}
+.active{
+	background-color: white;
+	height: auto;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.nav2{
+	text-align: left;
+	list-style-type: none;
+}
+.nav2 ul{
+	display: inline;
+	padding-right: 20px;
+	margin-left: 0px;
+}
+.nav2 .nav2Butt{
+	text-decoration: underline;
+	border: none;
+	font-size: 10px;
+	color: #0e639c;
+	background-color: white;
+}
+.nav2 .nav2Butt:hover{
+	background-color: #004d99;
+	color: white
+} 
+.changing{
+	margin-left: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.changing p{
+	text-align: center;
+}
+.changing img{
+	text-align: center;
+}
+.changing select{
+	margin-left: 40%;
+}
+#heading{
+	text-align: left;
+}
+#selectedCorp{
+	display: block;
+}
