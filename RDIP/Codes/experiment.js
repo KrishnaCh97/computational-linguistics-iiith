@@ -48,6 +48,7 @@ function randomWord(sent){
 function intro(){
 	reset('heading',"Introduction");
 	document.getElementById('language').style.display = "none";
+	document.getElementById('obj').style.textAlign = "left";
 	resetAll();
 	reset('obj',"A sentence can become more complex, if more than one verb is present or by joining two sentences or words using conjunctions or by some other methods.<br><br>In this experiment also, you will make more difficult sentences using the given words.");
 }
@@ -55,6 +56,7 @@ function theory(){
 	reset('obj',"");
 	reset('heading',"Theory");
 	document.getElementById('language').style.display = "none";
+	document.getElementById('obj').style.textAlign = "left";
 	resetAll();
 	reset('quiz1',"<u>Clause</u><br>A clause typically contains a subject noun phrase and a finite verb. Some languages allow subjects to be omitted. There are two types of subclauses:<ul><li>independent clause</li><li>subordinate clause</li></ul>Independent clause shows the complete meaning in it. For example: Ram eats. A subordinate clause is not a complete sentence. For example: because I am sick. Sentences can also be classified on the basis of clauses.");
 	reset('quiz2',"Classification on the basis of clauses are:<ol><li>A <b>simple sentence</b> consists of only one independent clause. There are no subordinate clauses.</li><li>A <b>compound sentence</b> consists of more than one independent clauses joined ny conjunctions or punctuations. There are no subordinate clauses.</li><li>A <b>complex sentence</b> consists of atleast one indpendent clause and a single subordinate clause</li><li>A <b>complex-compound sentence</b> consists of more than one independent clauses and atleast one of the independent clauses has one or more than one subordinate clauses</li></ol>")
@@ -64,6 +66,7 @@ function objective(){
 		reset('obj',"");
 	resetAll();
 	document.getElementById('language').style.display = "none";
+	document.getElementById('obj').style.textAlign = "left";
 	reset('heading',"Objective");
 	reset('obj',"<hr><br><br>The objective of this experiment is to know how to form logically correct sentences from the given words.<br><br><br><hr>")
 
@@ -74,6 +77,7 @@ function experiment(){
 	reset('obj',"");
 	document.getElementById('language').style.display = "block";
 	document.getElementById('language').style.margin = "0 40%";	
+	document.getElementById('obj').style.textAlign = "center";
 }
 
 function quiz(){
@@ -81,6 +85,7 @@ function quiz(){
 		reset('obj',"");
 	reset('heading',"Quizzes");
 	document.getElementById('language').style.display = "none";
+	document.getElementById('obj').style.textAlign = "left";
 	reset('quiz1',"Which of these is a valid sentence?<ol><li>Ram came after lunch.</li><li>Ram came after having lunch.</li><li>Sleeping I saw a tiger.</li><li>I saw a sleeping tiger.</li><li>No Parking is allowed.</li></ol>");
 	reset('quiz2',"<ol><li>खाते खाते राम सो गया</li><li>राम खाते खाते सो गया</li><li>राम खाता खाते सो गया</li><li>राम खाकर सो गया</li><li>राम और श्याम ने भी खाना खाया</li><li>राम ने और श्याम भी खाना खाया</li>")	
 }
@@ -90,11 +95,12 @@ function procedure(){
 	reset('obj',"");
 	reset('heading',"Procedure");
 	document.getElementById('language').style.display = "none";
+	document.getElementById('obj').style.textAlign = "left";
 	reset('quiz1',"<u><b>STEP 1:</b></u> Select a language which you know better<br><u><b>STEP 2:</b></u> Select the buttons which has words written on it, in a proper order<br><u><b>OUTPUT:</b></u> Group of words in a selected order will be shown<br>");
 	reset('quiz2',"<u><b>NOTE:</b></u><ol><li>If a wrong sentence is formed,<button>Re-form the sentence</button>is available for re-setting.<li>You can check whether the formed sentence is a valid or not by clicking<button>Check the correctness of this sentence</button></li><li>For a wrong sentence, you can get the correct sentence by clicking<button>Get correct sentence</button></li>")
 }
 function show(){
-var text = "Form a sentence (Declarative or Interrogative or any other type) from the given words<br>(select the buttons in proper order)";
+var text = "<span style='color:darkblue;'><b>Form a sentence (Declarative or Interrogative or any other type) from the given words</b></span><br><span style='color:blue'>(select the buttons in proper order)</span>";
 var lan = document.getElementById('language').value;
 if((lan==="English")||(lan==="Hindi")){
 	reset('obj',text);
@@ -133,7 +139,7 @@ function reset(elem,to){
 
 function addWord(x){
 	var word = document.getElementById("btn"+x).value;
-	document.getElementById('ansHead').innerHTML = "Formed Sentence (after selecting words):";
+	reset('ansHead',"<span style='color:darkblue'>Formed Sentence </span><span style='color:blue'>(after selecting words):</span>");
 
 	if(document.getElementById('answerArea').value==="")
 	document.getElementById('answerArea').innerHTML = word;

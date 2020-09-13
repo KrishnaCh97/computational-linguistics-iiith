@@ -1,10 +1,11 @@
 body{
 	text-align: center;
-	width: 60%;
-	height: all;
+	width: 70%;
+	height: 100%;
 	position: absolute;
-	left: 20%;
+	left: 15%;
 	background-color: #01284d;
+	margin-top: 0;
 }
 #obj{
 	text-align: left;
@@ -38,14 +39,15 @@ select{
 	color: red;
 }
 img{
-	width: 100%;
+	margin-left: 0;
 	height: auto;
 }
 .heading{
 	text-align: left;
 	color: white;
-	background-color: #3385ff;
-	height: 4%;
+	background-color: #0073e6;
+	height: auto;
+	padding-bottom: 0px;
 	margin-top: 0px;
 }
 .heading a{
@@ -53,6 +55,16 @@ img{
 	text-decoration: none;
 	padding-left: 15px;
 	font-family: sans-serif;
+}
+.heading img{
+	width: 100%;
+}
+.heading h3{
+	width: 55%;
+}
+.heading h3:hover{
+	background-color: #004d99;
+	color: white
 }
 
 .noBullets{
@@ -71,7 +83,7 @@ display: inline;
 }
 .main{
 	background-color: #e6f2ff;
-	height: 80%;
+	height: auto;
 }
 .main h1{
 	text-align: left;
@@ -81,8 +93,9 @@ display: inline;
 }
 .active{
 	background-color: white;
-	height: 80%;
+	height: auto;
 	margin-left: 20px;
+	margin-right: 20px;
 }
 .nav2{
 	text-align: left;
@@ -107,8 +120,9 @@ display: inline;
 #quiz1,#quiz2{
 	text-align: left;
 	font-size: x-small;
-	font-family: "Edigna";
+	font-family: sans-serif;
 }
 .changing{
 	margin-left: 20px;
+	padding-bottom: 20px;
 }
