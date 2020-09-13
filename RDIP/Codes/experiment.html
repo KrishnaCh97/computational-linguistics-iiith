@@ -6,23 +6,51 @@
 	<link rel="stylesheet" type="text/css" href="experiment.css">
 </head>
 <body>
-<p id="heading">Experiment</p>
+<div class="heading">
+<img src="http://cl-iiith.vlabs.ac.in/images/logo.jpg">
+<h3><a href="http://cl-iiith.vlabs.ac.in/index.html"> COMPUTATIONAL LINGUISTICS LAB</a></h3>
+</div>
+<div class="noBullets">
+<ul>
+	<li><a href="http://cl-iiith.vlabs.ac.in/index.html">Home></a></li><li><a href="http://cl-iiith.vlabs.ac.in/index.html">Computational Linguistics Lab></a></li><li><a href="experiment.html">Forming Sentences-2</a></li>
+</ul>
+</div>
+<div class="main">
+<h1>Forming Sentences-2</h1>
+<div class="active">
+<div class="nav2">
+	<ul>
+		<button class="nav2Butt" onclick="intro()"><img src="../../src/lab/images/introduction.jpg"><br>INTRODUCTION</button>
+		<button class="nav2Butt" onclick="theory()"><img src="../../src/lab/images/theory.jpg"><br>THEORY</button>
+		<button class="nav2Butt" onclick="objective()"><img src="../../src/lab/images/objective.jpg"><br>OBJECTIVE</button>
+		<button class="nav2Butt" onclick="experiment()"><img src="../../src/lab/images/simulation.jpg"><br>EXPERIMENT</button>
+		<button class="nav2Butt" onclick="quiz()"><img src="../../src/lab/images/quizzes.jpg"><br>QUIZZES</button>
+		<button class="nav2Butt" onclick="procedure()"><img src="../../src/lab/images/procedure.jpg"><br>PROCEDURE</button>
+	</ul>
+</div>
+<div class="changing">
+<p id="heading">Introduction</p>
 <select id="language" name="language" onclick="show()">
 	<option value="Select a language">---Select a Language---</option>
 	<option value="English">English</option>
 	<option value="Hindi">Hindi</option>
 </select>
-<p id="obj"></p>
+<p id="obj">A sentence can become more complex, if more than one verb is present or by joining two sentences or words using conjunctions or by some other methods.<br><br>In this experiment also, you will make more difficult sentences using the given words.</p>
+<p id="quiz1"></p>
+<p id="quiz2"></p>
 <p id="randText"></p>
 <p id="ansHead"></p>
 <p id="answerArea"></p>
-<button id='reformbut'= onclick='reformSent()'>Re-form the sentence</button><br>
+<button id='reformbut'= onclick='formSent()'>Re-form the sentence</button><br>
 <button id='checkbut' onclick='checkCorrect()'>Check the correctness of this sentence</button>
 <p id="rightResult"></p>
 <p id="wrongResult"></p>
 <button id="getCorrect" onclick="getCorrect()">Get Correct Sentence</button>
 <button id="hideCorrect" onclick="hideCorrect()">Hide the Correct Sentence</button>
 <p id="correctSentence"></p>
+</div>
+</div>
+</div>
 <script type="text/javascript" src="experiment.js"></script>
 </body>
 </html>

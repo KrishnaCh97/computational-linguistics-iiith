@@ -1,10 +1,16 @@
 body{
 	text-align: center;
 	width: 60%;
-	height: 100%;
-	border:solid;
+	height: all;
 	position: absolute;
 	left: 20%;
+	background-color: #01284d;
+}
+#obj{
+	text-align: left;
+	font-size: xx-small;
+	color: black;
+	font-family: sans-serif;
 }
 button{
 	margin: 10px;
@@ -15,6 +21,11 @@ button{
 }
 #heading{
 	text-align: left;
+	padding-top: 10px;
+}
+select{
+	text-align: center;
+	display: none;
 }
 #reformbut,#checkbut,#getCorrect,#hideCorrect{
 	display: none;
@@ -25,4 +36,79 @@ button{
 }
 #wrongResult{
 	color: red;
+}
+img{
+	width: 100%;
+	height: auto;
+}
+.heading{
+	text-align: left;
+	color: white;
+	background-color: #3385ff;
+	height: 4%;
+	margin-top: 0px;
+}
+.heading a{
+	color: white;
+	text-decoration: none;
+	padding-left: 15px;
+	font-family: sans-serif;
+}
+
+.noBullets{
+	list-style-type: none;
+	text-align: left;
+	color: white;
+	height: 3px;
+	padding-top: 0;
+}
+.noBullets ul li{
+display: inline;
+}
+.noBullets a{
+	color: white;
+	text-decoration: none;
+}
+.main{
+	background-color: #e6f2ff;
+	height: 80%;
+}
+.main h1{
+	text-align: left;
+	font-weight: normal;
+	padding-top: 10px;
+	margin-left: 20px;
+}
+.active{
+	background-color: white;
+	height: 80%;
+	margin-left: 20px;
+}
+.nav2{
+	text-align: left;
+	list-style-type: none;
+}
+.nav2 ul{
+	display: inline;
+	padding-right: 20px;
+	margin-left: 0px;
+}
+.nav2 .nav2Butt{
+	text-decoration: underline;
+	border: none;
+	font-size: 10px;
+	color: #0e639c;
+	background-color: white;
+}
+.nav2 .nav2Butt:hover{
+	background-color: #004d99;
+	color: white
+} 
+#quiz1,#quiz2{
+	text-align: left;
+	font-size: x-small;
+	font-family: "Edigna";
+}
+.changing{
+	margin-left: 20px;
 }
