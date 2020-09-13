@@ -112,3 +112,18 @@ display: inline;
 #selectedCorp{
 	display: block;
 }
+table{
+	margin-left: 40%;
+	width: 15%;
+}
+table,td{
+	border:solid 0.5px;
+	border-collapse: collapse;
+}
+td input{
+	width: 40px;
+}
+.changing #sub{
+	margin-left: 50%;
+	display: none;
+}

@@ -25,6 +25,10 @@ function show(){
 		document.getElementById('introImg').style.display = "none";
 		document.getElementById('obj').style.display = "none";
 	}
+	showElem('tableInput');
+	showElem('sub');
+	set("instr","Enter the number of tokens and types for the above corpus:");
+	set("tableInput","<table><tr><td>\#tokens:</td><td><input id='tok' type='text'</td></tr><tr><td>\#types:</td><td><input id='typ' type='text'</td></tr>")
 }
 function set(elem,to){
 	document.getElementById(elem).innerHTML = to;
@@ -42,7 +46,7 @@ function experiment(){
 	showElem('corpus');
 }
 function intro(){
-	document.getElementById('obj').style.display = "block";
-	document.getElementById('introImg').style.display = "block";
-	document.getElementById('corpus').style.display = "none";
+	showElem('obj').style.display = "block";
+	showElem('introImg').style.display = "block";
+	hideElem('corpus').style.display = "none";
 }
