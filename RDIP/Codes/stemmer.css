@@ -131,3 +131,11 @@ td input{
 	margin-left: 50%;
 	display: none;
 }
+.changing #newTypes{
+	display: none;
+	margin-left: 50%;
+}
+.changing #sub2{
+	display: none;
+	margin-left: 50%;
+}

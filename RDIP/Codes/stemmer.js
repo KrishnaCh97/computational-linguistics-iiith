@@ -106,3 +106,10 @@ function firstCheck(){
 		hideElem('cont');
 	}
 }
+function proceed(){
+	set('answer',"Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.");
+	hideElem("cont");
+	hideElem("sub");
+	showElem("newTypes");
+	showElem("sub2");
+}
