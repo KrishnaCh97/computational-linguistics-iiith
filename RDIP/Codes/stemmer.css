@@ -139,3 +139,22 @@ td input{
 	display: none;
 	margin-left: 50%;
 }
+.theory{
+	display: none;
+	text-align: left;
+}
+.objective{
+	display: none;
+	text-align: left;
+}
+.quiz{
+	display: none;
+	text-align: left;
+}
+.procedure{
+	display: none;
+	text-align: left;
+}
+.exp{
+	display: none;
+}

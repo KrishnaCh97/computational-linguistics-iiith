@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Virtual Labs</title>
+	<!-- <script type="text/javascript" src="../Libraries/require.js"></script> -->
+	<script src="../Libraries/node_modules/snowball/stemmer/lib/Snowball.min.js"></script>
 	<link rel="icon" type="icon/png" href="../../src/lab/images/favicon.png">
 	<link rel="stylesheet" type="text/css" href="stemmer.css">
 </head>
@@ -39,6 +41,50 @@
 </select>
 <p id="obj">Tokens correspond to the total number of word counts in a text while type corresponds to the total count of unique words in a text.</p>
 <img id="introImg" src="../../src/lab/exp3/Exp3/Exp3.jpg">
+<div class="theory">
+	<b>Definition</b><br>
+	<b>Tokens</b> correspond to the total number of word counts in a text while <b>type</b> corresponds to the total count of unique words in a text. We can say that language consists of various types of words and all the particular instances of these words are called tokens.<br><br>
+	For Eg: Do not waste time as wasting time does a lot of harm.<br><br>
+	Here,<br>
+#tokens=12<br>
+#types=11 (time has been repeated twice)<br><br>
+<b>Type vs token distinction</b><br><br>
+The type/token distinction is related to that between universals and particulars. Tokens are concrete particular instances of a general and abstract type.<br>
+There is only one word 'the' (type) but many instances of it found on this page (token).<br><br>
+The type/token distinction is applicable beyond language as well.
+For eg:
+<ul>
+<li>Beethovenâs Fifth Symphony and performances of it</li>
+<li>the white elephant and specimens of it</li>
+<li>Kentucky Fried Chicken and its centres</li></ul>
+<b>Types - (continued)</b><br><br>
+
+Study this example again: Do not waste time as wasting time does a lot of harm.<br><br>
+
+Now, we notice that 'waste' and 'wasting' share a common root. So do 'do' and 'does'.<br>
+Do we consider them as different types? The second approach is to consider them as a single type as inflections(different grammatical forms) of the same word (type).<br>
+Therefore,<br>
+#tokens=12 #types(root)=9
+</div>
+<div class="objective">
+	<hr>The objective of this experiment is to impart basic knowledge about the distinction between types and tokens.<hr>
+</div>
+<div class="quiz">
+	Give number of types and tokens for the following sentences:
+	<ol>
+		<li>What did you do?</li>
+		<li>Two and two makes four.</li>
+		<li>Ram eats an apple afteat eating a banana.</li>
+		<li>April will come here after 10th of April.</li>
+		<li>John drinks tea and George takes cold drink.</li>
+	</ol>
+</div>
+<div class="procedure">
+	<b><u>STEP1:</u></b>Select the corpus.<br>
+	<b><u>STEP2:</u></b>Submit the number of tokens and types in the given text box.<br>
+	<b><u>STEP3:</u></b>If your answer is correct, you can enter the number of types of root and check your answer.<br>
+</div>
+<div class="exp">
 <p id="selectedCorp"></p>
 <p id="instr"></p>
 <p id="tableInput"></p>
@@ -47,6 +93,7 @@
 <button id="cont" onclick="proceed()">Continue</button>
 <input type="text" name="newTypes" id="newTypes">
 <input id="sub2" type="submit" name="submit2">
+</div>
 </div>
 </div>
 </div>
