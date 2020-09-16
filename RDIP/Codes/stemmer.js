@@ -15,43 +15,40 @@ var temp;
 var sys=[];
 function show(){
 	corp = document.getElementById('corpus').value;
-	document.getElementById('selectedCorp').style.display = "block";
+	showElem('selectedCorp');
 	if(corp==="Select a corpus"){
 		alert("Select a corpus");
 		return false;
 	}
 	else if(corp==="corpus1"){
-		selected = corp1;
-		set("selectedCorp",corp1);
-		document.getElementById('introImg').style.display = "none";
-		document.getElementById('obj').style.display = "none";
-		set('answer',"");
-		hideElem('newTypes');
-		hideElem('sub2');
-	}
+		selected = corp1;}
 	else if(corp==="corpus2"){
 		selected = corp2;
-		set("selectedCorp",corp2);
-		document.getElementById('introImg').style.display = "none";
-		document.getElementById('obj').style.display = "none";
-		set('answer',"");
-		hideElem('newTypes');
-		hideElem('sub2');
-	}
+		}
 	else if(corp==="corpus3"){
-		selected = corp3;
-		set("selectedCorp",corp3);
-		document.getElementById('introImg').style.display = "none";
-		document.getElementById('obj').style.display = "none";
-		set('answer',"");
-		hideElem('newTypes');
-		hideElem('sub2');
-	}
+		selected = corp3;}
+	set("selectedCorp",selected);
+	set('answer',"");
+	hideElem('instr2');
+	hideElem('des');
+	hideElem('newTypes');
+	hideElem('sub2');
+	hideElem('answer2');
+
 	showElem('tableInput');
 	showElem('sub');
 	set("instr","Enter the number of tokens and types for the above corpus:");
 	set("tableInput","<table><tr><td>\#tokens:</td><td><input id='tok' type='text'</td></tr><tr><td>\#types:</td><td><input id='typ' type='text'</td></tr>")
+	clear();
 }
+function clear(){
+	document.getElementById('tok').value = "";
+	document.getElementById('typ').value = "";	
+}
+function clear2(){
+	document.getElementById('')
+}
+
 function set(elem,to){
 	document.getElementById(elem).innerHTML = to;
 }
@@ -62,31 +59,41 @@ function showElem(elem){
 	document.getElementById(elem).style.display = "block";
 }
 
+function hideClass(cl){
+	document.getElementsByClassName(cl)[0].style.display = "none";
+}
+function showClass(cl){
+	document.getElementsByClassName(cl)[0].style.display = "block";
+}
+function hideAllClass(){
+	hideClass('exp');
+	hideClass('objective');
+	hideClass('theory');
+	hideClass('quiz');
+	hideClass('procedure');
+	hideClass('introduction');
+}
+function setBack(elem,color){
+	document.getElementById(elem).style.background = color;
+}
+function setColor(elem,color){
+	document.getElementById(elem).style.color= color;
+}
+
 function experiment(){
-	hideElem('obj');
-	hideElem('introImg');
-	showElem('corpus');
 	set('heading',"Experiment");
-	document.getElementsByClassName('exp')[0].style.display = "block";
-	document.getElementsByClassName('objective')[0].style.display = "none";
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	document.getElementsByClassName('quiz')[0].style.display = "none";
-	document.getElementsByClassName('procedure')[0].style.display = "none";
+	hideAllClass();
+	showClass('exp');
+
 }
 function intro(){
-	showElem('obj');
-	showElem('introImg');
-	hideElem('corpus');
 	set('heading',"Introduction");
-	document.getElementsByClassName('exp')[0].style.display = "none";
-	document.getElementsByClassName('objective')[0].style.display = "none";
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	document.getElementsByClassName('quiz')[0].style.display = "none";
-	document.getElementsByClassName('procedure')[0].style.display = "none";
+	hideAllClass();
+	showClass('introduction');
 }
 
 function tokenCount(){
-	var reg = /\w+/gi;
+	var reg = /(\w+'\w+)|(\w+)/gi;
 	temp = selected.match(reg);
 	tokens = temp.length;
 	return tokens;
@@ -99,7 +106,6 @@ function typeCount(){
 			sys.push(temp[x]);
 		}
 	}
-	
 	types = sys.length;
 	return types;
 }
@@ -109,27 +115,31 @@ function firstCheck(){
 	var tokenC = tokenCount();
 	var typeC = typeCount();
 	if((tokenC==tokenInput)&&(typeC==typeInput)){
-		document.getElementById('tok').style.background = "green";
-		document.getElementById('typ').style.background = "green";
+		setBack('tok',"green");
+		setBack('typ',"green");
 		set('answer',"Right answer");
+		setColor('answer',"green");
 		showElem('cont');
 	}
 	else if((tokenC==tokenInput)){
-		document.getElementById('tok').style.background = "green";
-		document.getElementById('typ').style.background = "red";
+		setBack('tok',"green");
+		setBack('typ',"red");
 		set('answer',"Wrong answer");
+		setColor('answer',"red");
 		hideElem('cont');
 	}
 	else if((typeC==typeInput)){
-		document.getElementById('tok').style.background = "red";
-		document.getElementById('typ').style.background = "green";
+		setBack('tok',"red");
+		setBack('typ',"green");
 		set('answer',"Wrong answer");
+		setColor('answer',"red");
 		hideElem('cont');
 	}
 	else{
-		document.getElementById('tok').style.background = "red";
-		document.getElementById('typ').style.background = "red";
+		setBack('tok',"red");
+		setBack('typ',"red");
 		set('answer',"Wrong answer");
+		setColor('answer',"red");
 		hideElem('cont');
 	}
 }
@@ -137,12 +147,19 @@ var sysNew;
 var newTypeInput;
 function proceed(){
 	sysNew=[];
-	set('answer',"Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.");
+	showElem('des');
+	showElem('instr2');
+	set('answer',"");
+	set('instr2',"Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.");
+	set('des',"#newTypes");
 	hideElem("cont");
 	hideElem("sub");
 	showElem("newTypes");
 	showElem("sub2");
-
+	showElem('answer2');
+	set('answer2',"");
+	document.getElementById('newTypes').value = "";
+	setBack('newTypes',"white");
 	for(i=0;i<sys.length;i++){
 		var x = sys[i];
 		if((x!="the")&&(x!="to")&&(x!="of")&&(x!="very")&&(x!="you")&&(x!="does")&&
@@ -159,53 +176,35 @@ function proceed(){
 }
 function secondCheck(){
 	newTypeInput = parseInt(document.getElementById('newTypes').value);
-	if(sysNew.length===newTypeInput){
-		document.getElementById('newTypes').style.background = "green";
-	}else
-		document.getElementById('newTypes').style.background = "red";
+
+	if(sysNew.length==newTypeInput){
+		setBack('newTypes',"green");
+		set("answer2","Right Answer");
+		setColor('answer2',"green");
+	}else{
+		setBack('newTypes',"red");
+		set("answer2","Wrong Answer");
+		setColor('answer2',"red");
+	}
 }
 
 function theory(){
 	set('heading',"Theory");
-	document.getElementsByClassName('theory')[0].style.display = "block";
-	document.getElementsByClassName('objective')[0].style.display = "none";
-	document.getElementsByClassName('quiz')[0].style.display = "none";
-	document.getElementsByClassName('procedure')[0].style.display = "none";
-	document.getElementsByClassName('exp')[0].style.display = "none";
-	hideElem('obj');
-	hideElem('introImg');
-	hideElem('corpus');
+	hideAllClass();
+	showClass('theory');
 }
 function objective(){
 	set('heading',"Objective");
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	hideElem('obj');
-	hideElem('introImg');
-	hideElem('corpus');
-	document.getElementsByClassName('exp')[0].style.display = "none";
-	document.getElementsByClassName('objective')[0].style.display = "block";
-	document.getElementsByClassName('quiz')[0].style.display = "none";
-	document.getElementsByClassName('procedure')[0].style.display = "none";
+	hideAllClass();
+	showClass('objective');
 }
 function quiz(){
 	set('heading',"Quiz");
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	hideElem('obj');
-	hideElem('introImg');
-	hideElem('corpus');
-	document.getElementsByClassName('exp')[0].style.display = "none";
-	document.getElementsByClassName('objective')[0].style.display = "none";	
-	document.getElementsByClassName('quiz')[0].style.display = "block";
-	document.getElementsByClassName('procedure')[0].style.display = "none";
+	hideAllClass();
+	showClass('quiz');
 }
 function procedure(){
 	set('heading',"Procedure");
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	hideElem('obj');
-	hideElem('introImg');
-	hideElem('corpus');
-	document.getElementsByClassName('exp')[0].style.display = "none";
-	document.getElementsByClassName('objective')[0].style.display = "none";	
-	document.getElementsByClassName('quiz')[0].style.display = "none";
-	document.getElementsByClassName('procedure')[0].style.display = "block"
+	hideAllClass();
+	showClass('procedure');
 }

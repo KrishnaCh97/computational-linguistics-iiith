@@ -2,8 +2,7 @@ body{
 	text-align: center;
 	width: 70%;
 	height: auto;
-	position: absolute;
-	left: 15%;
+	margin: auto;
 	background-color: #01284d;
 	margin-top: 0;
 }
@@ -14,7 +13,6 @@ button{
 
 select{
 	text-align: center;
-	display: none;
 }
 
 .heading{
@@ -104,7 +102,7 @@ display: inline;
 	text-align: center;
 }
 .changing select{
-	margin-left: 40%;
+	margin:auto;
 }
 #heading{
 	text-align: left;
@@ -113,7 +111,7 @@ display: inline;
 	display: block;
 }
 table{
-	margin-left: 40%;
+	margin:auto;
 	width: 15%;
 }
 table,td{
@@ -124,37 +122,45 @@ td input{
 	width: 40px;
 }
 .changing #sub{
-	margin-left: 50%;
+	margin: auto;
 	display: none;
 }
 .changing #cont{
-	margin-left: 50%;
+	margin:auto;
 	display: none;
 }
 .changing #newTypes{
 	display: none;
-	margin-left: 50%;
+	margin:auto;
 }
 .changing #sub2{
 	display: none;
-	margin-left: 50%;
+	margin:auto;
 }
 .theory{
 	display: none;
 	text-align: left;
+	font-size: x-small;
 }
 .objective{
 	display: none;
 	text-align: left;
+	font-size: x-small;
 }
 .quiz{
 	display: none;
 	text-align: left;
+	font-size: x-small;
 }
 .procedure{
 	display: none;
 	text-align: left;
+	font-size: x-small;
 }
 .exp{
 	display: none;
+	font-size: x-small;
+}
+.exp select{
+	margin: auto;
 }

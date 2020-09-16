@@ -9,94 +9,99 @@
 	<link rel="stylesheet" type="text/css" href="stemmer.css">
 </head>
 <body>
-<div class="heading">
-<img src="http://cl-iiith.vlabs.ac.in/images/logo.jpg">
-<h3><a href="http://cl-iiith.vlabs.ac.in/index.html"> COMPUTATIONAL LINGUISTICS LAB</a></h3>
-</div>
-<div class="noBullets">
-<ul>
-	<li><a href="http://cl-iiith.vlabs.ac.in/index.html">Home></a></li><li><a href="http://cl-iiith.vlabs.ac.in/index.html">Computational Linguistics Lab></a></li><li><a href="stemmer.html">Tokens and Types</a></li>
-</ul>
-</div>
-<div class="main">
-<h1>Tokens and Types</h1>
-<div class="active">
-<div class="nav2">
-	<ul>
-		<button class="nav2Butt" onclick="intro()"><img src="../../src/lab/images/introduction.jpg"><br>INTRODUCTION</button>
-		<button class="nav2Butt" onclick="theory()"><img src="../../src/lab/images/theory.jpg"><br>THEORY</button>
-		<button class="nav2Butt" onclick="objective()"><img src="../../src/lab/images/objective.jpg"><br>OBJECTIVE</button>
-		<button class="nav2Butt" onclick="experiment()"><img src="../../src/lab/images/simulation.jpg"><br>EXPERIMENT</button>
-		<button class="nav2Butt" onclick="quiz()"><img src="../../src/lab/images/quizzes.jpg"><br>QUIZZES</button>
-		<button class="nav2Butt" onclick="procedure()"><img src="../../src/lab/images/procedure.jpg"><br>PROCEDURE</button>
-	</ul>
-</div>
-<div class="changing">
-<p id="heading">Introduction</p>
-<select id="corpus" name="corpus" onclick="show()">
-	<option value="Select a corpus">---Select a Corpus---</option>
-	<option value="corpus1">Corpus 1</option>
-	<option value="corpus2">Corpus 2</option>
-	<option value="corpus3">Corpus 3</option>
-</select>
-<p id="obj">Tokens correspond to the total number of word counts in a text while type corresponds to the total count of unique words in a text.</p>
-<img id="introImg" src="../../src/lab/exp3/Exp3/Exp3.jpg">
-<div class="theory">
-	<b>Definition</b><br>
-	<b>Tokens</b> correspond to the total number of word counts in a text while <b>type</b> corresponds to the total count of unique words in a text. We can say that language consists of various types of words and all the particular instances of these words are called tokens.<br><br>
-	For Eg: Do not waste time as wasting time does a lot of harm.<br><br>
-	Here,<br>
-#tokens=12<br>
-#types=11 (time has been repeated twice)<br><br>
-<b>Type vs token distinction</b><br><br>
-The type/token distinction is related to that between universals and particulars. Tokens are concrete particular instances of a general and abstract type.<br>
-There is only one word 'the' (type) but many instances of it found on this page (token).<br><br>
-The type/token distinction is applicable beyond language as well.
-For eg:
-<ul>
-<li>Beethovenâs Fifth Symphony and performances of it</li>
-<li>the white elephant and specimens of it</li>
-<li>Kentucky Fried Chicken and its centres</li></ul>
-<b>Types - (continued)</b><br><br>
+	<div class="heading">
+		<img src="http://cl-iiith.vlabs.ac.in/images/logo.jpg">
+		<h3><a href="http://cl-iiith.vlabs.ac.in/index.html"> COMPUTATIONAL LINGUISTICS LAB</a></h3>
+	</div>
+	<div class="noBullets">
+		<ul>
+			<li><a href="http://cl-iiith.vlabs.ac.in/index.html">Home></a></li><li><a href="http://cl-iiith.vlabs.ac.in/index.html">Computational Linguistics Lab></a></li><li><a href="stemmer.html">Tokens and Types</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<h1>Tokens and Types</h1>
+		<div class="active">
+			<div class="nav2">
+				<ul>
+					<button class="nav2Butt" onclick="intro()"><img src="../../src/lab/images/introduction.jpg"><br>INTRODUCTION</button>
+					<button class="nav2Butt" onclick="theory()"><img src="../../src/lab/images/theory.jpg"><br>THEORY</button>
+					<button class="nav2Butt" onclick="objective()"><img src="../../src/lab/images/objective.jpg"><br>OBJECTIVE</button>
+					<button class="nav2Butt" onclick="experiment()"><img src="../../src/lab/images/simulation.jpg"><br>EXPERIMENT</button>
+					<button class="nav2Butt" onclick="quiz()"><img src="../../src/lab/images/quizzes.jpg"><br>QUIZZES</button>
+					<button class="nav2Butt" onclick="procedure()"><img src="../../src/lab/images/procedure.jpg"><br>PROCEDURE</button>
+				</ul>
+			</div>
+			<div class="changing">
+				<p id="heading">Introduction</p>
+				<div class="introduction">
+				<p id="obj">Tokens correspond to the total number of word counts in a text while type corresponds to the total count of unique words in a text.</p>
+				<img id="introImg" src="../../src/lab/exp3/Exp3/Exp3.jpg">
+				</div>
+			<div class="theory">
+					<b>Definition</b><br>
+					<b>Tokens</b> correspond to the total number of word counts in a text while <b>type</b> corresponds to the total count of unique words in a text. We can say that language consists of various types of words and all the particular instances of these words are called tokens.<br><br>
+					For Eg: Do not waste time as wasting time does a lot of harm.<br><br>
+					Here,<br>
+					#tokens=12<br>
+					#types=11 (time has been repeated twice)<br><br>
+					<b>Type vs token distinction</b><br><br>
+					The type/token distinction is related to that between universals and particulars. Tokens are concrete particular instances of a general and abstract type.<br>
+					There is only one word 'the' (type) but many instances of it found on this page (token).<br><br>
+					The type/token distinction is applicable beyond language as well.
+					For eg:
+					<ul>
+						<li>Beethovenâs Fifth Symphony and performances of it</li>
+						<li>the white elephant and specimens of it</li>
+						<li>Kentucky Fried Chicken and its centres</li></ul>
+						<b>Types - (continued)</b><br><br>
 
-Study this example again: Do not waste time as wasting time does a lot of harm.<br><br>
+						Study this example again: Do not waste time as wasting time does a lot of harm.<br><br>
 
-Now, we notice that 'waste' and 'wasting' share a common root. So do 'do' and 'does'.<br>
-Do we consider them as different types? The second approach is to consider them as a single type as inflections(different grammatical forms) of the same word (type).<br>
-Therefore,<br>
-#tokens=12 #types(root)=9
-</div>
-<div class="objective">
-	<hr>The objective of this experiment is to impart basic knowledge about the distinction between types and tokens.<hr>
-</div>
-<div class="quiz">
-	Give number of types and tokens for the following sentences:
-	<ol>
-		<li>What did you do?</li>
-		<li>Two and two makes four.</li>
-		<li>Ram eats an apple afteat eating a banana.</li>
-		<li>April will come here after 10th of April.</li>
-		<li>John drinks tea and George takes cold drink.</li>
-	</ol>
-</div>
-<div class="procedure">
-	<b><u>STEP1:</u></b>Select the corpus.<br>
-	<b><u>STEP2:</u></b>Submit the number of tokens and types in the given text box.<br>
-	<b><u>STEP3:</u></b>If your answer is correct, you can enter the number of types of root and check your answer.<br>
-</div>
-<div class="exp">
-<p id="selectedCorp"></p>
-<p id="instr"></p>
-<p id="tableInput"></p>
-<input id="sub" type="submit" name="submit" onclick="firstCheck()">
-<p id="answer"></p>
-<button id="cont" onclick="proceed()">Continue</button>
-<input type="text" name="newTypes" id="newTypes">
-<input id="sub2" type="submit" name="submit2" onclick="secondCheck()">
-</div>
-</div>
-</div>
-</div>
-<script type="text/javascript" src="stemmer.js"></script>
+						Now, we notice that 'waste' and 'wasting' share a common root. So do 'do' and 'does'.<br>
+						Do we consider them as different types? The second approach is to consider them as a single type as inflections(different grammatical forms) of the same word (type).<br>
+						Therefore,<br>
+						#tokens=12 #types(root)=9
+			</div>
+			<div class="objective">
+						<hr><br>The objective of this experiment is to impart basic knowledge about the distinction between types and tokens.<br><br><hr>
+			</div>
+			<div class="quiz">
+						Give number of types and tokens for the following sentences:
+						<ol>
+							<li>What did you do?</li>
+							<li>Two and two makes four.</li>
+							<li>Ram eats an apple afteat eating a banana.</li>
+							<li>April will come here after 10th of April.</li>
+							<li>John drinks tea and George takes cold drink.</li>
+						</ol>
+			</div>
+			<div class="procedure">
+						<b><u>STEP1:</u></b>Select the corpus.<br>
+						<b><u>STEP2:</u></b>Submit the number of tokens and types in the given text box.<br>
+						<b><u>STEP3:</u></b>If your answer is correct, you can enter the number of types of root and check your answer.<br>
+			</div>
+		    <div class="exp">
+		    	<select id="corpus" name="corpus" onclick="show()">
+					<option value="Select a corpus">---Select a Corpus---</option>
+					<option value="corpus1">Corpus 1</option>
+					<option value="corpus2">Corpus 2</option>
+					<option value="corpus3">Corpus 3</option>
+				</select>
+						<p id="selectedCorp"></p>
+						<p id="instr"></p>
+						<p id="tableInput"></p>
+						<input id="sub" type="submit" name="submit" onclick="firstCheck()">
+						<p id="answer"></p>
+						<button id="cont" onclick="proceed()">Continue</button>
+						<p id="instr2"></p>
+						<p id="des"></p>
+						<input type="text" name="newTypes" id="newTypes" size="4"><br>
+						<input id="sub2" type="submit" name="submit2" onclick="secondCheck()">
+						<p id="answer2"></p>
+			</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="stemmer.js"></script>
 </body>
 </html>
