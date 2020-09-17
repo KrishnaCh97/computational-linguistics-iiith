@@ -84,6 +84,18 @@ function experiment(){
 	set('heading',"Experiment");
 	hideAllClass();
 	showClass('exp');
+	set('corpus',"<option value='Select a corpus'>---Select a Corpus---</option><option value='corpus1'>Corpus 1</option><option value='corpus2'>Corpus 2</option><option value='corpus3'>Corpus 3</option>");
+	set('selectedCorp',"");
+	set("instr","");
+	set("tableInput","");
+	hideElem('sub');
+	set('answer',"");
+	hideElem('cont');
+	hideElem('des');
+	hideElem('instr2');
+	hideElem('newTypes');
+	hideElem('sub2');
+	hideElem('answer2');
 
 }
 function intro(){
@@ -162,14 +174,11 @@ function proceed(){
 	setBack('newTypes',"white");
 	for(i=0;i<sys.length;i++){
 		var x = sys[i];
-		if((x!="the")&&(x!="to")&&(x!="of")&&(x!="very")&&(x!="you")&&(x!="does")&&
-			(x!="off")&&(x!="me")&&(x!="up")&&(x!="can")&&(x!="than")&&(x!="did")){
 			stemmer.setCurrent(x);
 			stemmer.stem();
 			var z = stemmer.getCurrent();
 			if(!sysNew.includes(z)){
 				sysNew.push(z);
-			}
 		}
 	}
 	
