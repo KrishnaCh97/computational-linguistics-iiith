@@ -163,7 +163,7 @@ function proceed(){
 	showElem('instr2');
 	set('answer',"");
 	set('instr2',"Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.");
-	set('des',"#newTypes");
+	set('des',"#newTypes:");
 	hideElem("cont");
 	hideElem("sub");
 	showElem("newTypes");
