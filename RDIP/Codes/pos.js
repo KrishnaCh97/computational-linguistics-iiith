@@ -19,8 +19,9 @@ function experiment(){
 	document.getElementsByClassName('experiment')[0].style.display = "block";
 	document.getElementById('heading').innerHTML = "Experiment";	
 }
+var lan = "";
 function showLan(){
-	var lan = document.getElementById("lan").value;
+	lan = document.getElementById("lan").value;
 	document.getElementById('instr').innerHTML="";
 	document.getElementById('lexTable').innerHTML ="";
 	document.getElementById('sub').style.display = "none";
@@ -48,6 +49,7 @@ function showTable(){
 	else{
 		var row="";
 		document.getElementById('instr').innerHTML="Select the POS tag for corresponding words";
+		if(lan==="english"){
 		if(sent==="eng0"){
 			selectedSent = Eng[0].split(" ");
 		}
@@ -63,6 +65,14 @@ function showTable(){
 		if(sent==="eng4"){
 			selectedSent = Eng[4].split(" ");
 		}
+		for(i=0;i<selectedSent.length;i++){row+="<tr><td>"+selectedSent[i]+"</td><td><select><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adverb</option><option>Adjective</option><option>Preposition</option><option>Conjunction</option><option>Determiner</option><option>Interjection</option></select></td><td></td><td></td></tr>"};
+			document.getElementById('lexTable').innerHTML ="";
+			document.getElementById('lexTable').innerHTML = "<table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr>"+
+		row
+		+"</table>"
+		document.getElementById('sub').style.display = "block";
+		}
+		else if(lan==="hindi"){
 		if(sent==="hin0"){
 			selectedSent = Hin[0].split(" ");
 		}
@@ -78,12 +88,13 @@ function showTable(){
 		if(sent==="hin4"){
 			selectedSent = Hin[4].split(" ");
 		}
-		for(i=0;i<selectedSent.length;i++){row+="<tr><td>"+selectedSent[i]+"</td><td><select><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adverb</option><option>Adjective</option><option>Preposition</option><option>Postposition</option><option>Conjunction</option><option>Determiner</option><option>Interjection</option></select></td><td></td><td></td></tr>"};
+		for(i=0;i<selectedSent.length;i++){row+="<tr><td>"+selectedSent[i]+"</td><td><select><option>Noun</option><option>Pronoun</option><option>Verb</option><option>Adverb</option><option>Adjective</option><option>Postposition</option><option>Conjunction</option><option>Determiner</option><option>Interjection</option></select></td><td></td><td></td></tr>"};
 			document.getElementById('lexTable').innerHTML ="";
 			document.getElementById('lexTable').innerHTML = "<table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr>"+
 		row
 		+"</table>"
 		document.getElementById('sub').style.display = "block";
+		}
 	}
 
 }
