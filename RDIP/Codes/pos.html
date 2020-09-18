@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Virtual Labs</title>
+	<link rel="icon" type="icon/png" href="../../src/lab/images/favicon.png">
+	<link rel="stylesheet" type="text/css" href="pos.css">
+</head>
+<body>
+	<div class="heading">
+		<img src="http://cl-iiith.vlabs.ac.in/images/logo.jpg">
+		<h3><a href="http://cl-iiith.vlabs.ac.in/index.html"> COMPUTATIONAL LINGUISTICS LAB</a></h3>
+	</div>
+	<div class="noBullets">
+		<ul>
+			<li><a href="http://cl-iiith.vlabs.ac.in/index.html">Home></a></li><li><a href="http://cl-iiith.vlabs.ac.in/index.html">Computational Linguistics Lab></a></li><li><a href="experiment.html">Coarse - grained POS Tagging</a></li>
+		</ul>
+	</div>
+	<div class="main">
+		<h1>Coarse - grained POS Tagging</h1>
+		<div class="active">
+			<div class="nav2">
+				<ul>
+					<button class="nav2Butt" onclick="intro()"><img src="../../src/lab/images/introduction.jpg"><br>INTRODUCTION</button>
+					<button class="nav2Butt" onclick="theory()"><img src="../../src/lab/images/theory.jpg"><br>THEORY</button>
+					<button class="nav2Butt" onclick="objective()"><img src="../../src/lab/images/objective.jpg"><br>OBJECTIVE</button>
+					<button class="nav2Butt" onclick="experiment()"><img src="../../src/lab/images/simulation.jpg"><br>EXPERIMENT</button>
+					<button class="nav2Butt" onclick="quiz()"><img src="../../src/lab/images/quizzes.jpg"><br>QUIZZES</button>
+					<button class="nav2Butt" onclick="procedure()"><img src="../../src/lab/images/procedure.jpg"><br>PROCEDURE</button>
+					<button class="nav2Butt" onclick="readings()"><img src="../../src/lab/images/readings.jpg"><br>FURTHER READINGS</button>
+				</ul>
+			</div>
+			<div class="changing">
+				<p id="heading">Introduction</p>
+				<div class="introduction">
+					<p id="obj">Part-of-speech tagging is the process of assigning a part-of-speech (lexical class marker) to each word in a corpus. The basic parts of speech are : Noun, Verb, Determiner, Adjective, Adverb, Preposition (in English), Postposition (in Hindi).</p>
+					<img src="../../src/lab/exp7/Exp5/a.jpg">
+				</div>
+				<div class="theory">
+					<p>"Parts of speech" are the basic lexical categories of the words present in a language. It is very important to understand these, in order to understand the grammar and use of the language concerned.
+					</p>
+					<p>
+						Eg:<ul><li>Ram(Noun) ate(Verb) an(Determiner) apple(Noun) with(Preposition) a(Article) fork(Noun).</li><li>राम(Noun) ने(Postposition) चम्मच(Noun) से(Postposition) मिठाई(Noun) खाई(Verb).
+						</li></ul>
+					</p>
+					<p>Each part of speech explains how the word is used. In fact, the same word can act as different parts of speechs depending on the context.</p>
+					<p>Eg: A noun in one sentence and an adjective in the next.
+						<ul><li>The glass was broken(Verb).</li><li>The broken(Adjective) glass pierced her flesh.</li></ul></p>
+					<p>Part-of-speech tagging is the process of assigning a part-of-speech (lexical class marker) to each word in a corpus.</p>
+					<table><tr><th>POS</th><th>FUNCTION</th><th>EXAMPLE</th></tr>
+						<tr><td>Verb</td><td>action or state</td><td>take, eat, है, सोना, गया </td></tr>
+						<tr><td>Noun</td><td>naming word; person or thing</td><td>table, John, honesty, राम, कुर्सी, हिम्मत</td></tr>
+						<tr><td>Pronoun</td><td>replaces noun</td><td>	he, she, you, मैं, वह</td></tr>
+						<tr><td>Determiner</td><td>occurs before noun or noun phrase</td><td>the, many, all</td></tr>
+						<tr><td>Adjective</td><td>	describes noun</td><td>green, big, छोटा, सुन्दर, काला</td></tr>
+						<tr><td>Adverb</td><td>	describes verb</td><td>naturally, slowly,धीरे, जल्दी</td></tr>
+						<tr><td>Preposition</td><td>joins noun to other POS</td><td>in,of, about </td></tr>
+						<tr><td>Postposition</td><td>joins noun to other POS</td><td>में, से, के लिए</td></tr>
+						<tr><td>Conjunction</td><td>joins two words, phrases, sentences</td><td>but, so, और, या</td></tr>
+						<tr><td>Interjection</td><td>express emotion or surprise followed by exclamation marks</td><td>Hello!, Hurray!, वाह!</td></tr>
+					</table>	
+				</div>
+				<div class="experiment">
+					<select id="lan" name="lan" onclick="showLan()">
+						<option value="select language">---Select Language---</option>
+						<option value="english">English</option>
+						<option value="hindi">Hindi</option>
+					</select>
+					<p id="selectedLan"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="pos.js"></script>
+</body>
+</html>
