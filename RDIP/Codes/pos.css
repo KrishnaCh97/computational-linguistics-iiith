@@ -134,3 +134,18 @@ display: inline;
 .experiment{
 	display: none;
 }
+#lexTable table,th,td{
+	border:solid;
+	border-collapse: collapse;
+}
+#lexTable td{
+	text-align: left;
+	padding-left: 10px;
+}
+#lexTable table{
+	margin: auto;
+}
+#sub{
+	display: none;
+	margin: auto;
+}
