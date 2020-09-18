@@ -1,0 +1,5 @@
+1. The "Get answers" button should be shown only if the POS selected is wrong.
+2. When clicked on the "Get answers" button, it should show the fourth column,
+	which is right POS, and the button should change to "Hide answers".
+3. When clicked on the "Hide answers" button, it should hide the fourth column
+	and the button should change to "Get answers".	
