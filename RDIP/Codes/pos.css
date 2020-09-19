@@ -141,11 +141,39 @@ display: inline;
 #lexTable td{
 	text-align: left;
 	padding-left: 10px;
+	font-family: sans-serif;
 }
 #lexTable table{
 	margin: auto;
+}
+#lexTable th{
+	font-family: monospace;
+	color: brown;
+	border-color: black;
 }
 #sub{
 	display: none;
 	margin: auto;
 }
+.theory,.objective,.quiz,.procedure{
+	display: none;
+	text-align: left;
+	font-size: xx-small;
+	color: black;
+	font-family: sans-serif;
+}
+.readings{
+	display: none;
+	font-size: xx-small;
+	color: black;
+	font-family: sans-serif;
+}
+.theory table{
+	margin: auto;
+}
+.experiment #instr{
+	color: blue;
+	font:italic;
+	font-size: small;
+}
+.experiment

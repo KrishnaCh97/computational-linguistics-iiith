@@ -1,24 +1,73 @@
 var Eng = ["The child liked the chocolate.","She was stopped by the bravest knight.","Mary baked a cake for his birthday","She decorated the cake carefully","Mary wore a dress with polka dots"];
 var Hin = ["राम ने सीता के लिए फल तोड़ा।","छोटे बच्चे पाठशाला जल्दी आयेंगे।","मेहनत का फल मीठा होता है।","वाह! वह खूबसूरत है।","पेड़ से पत्ते गिर गए।"];
 
-function theory() {
-	document.getElementsByClassName('theory')[0].style.display = "block";
-	document.getElementsByClassName('introduction')[0].style.display = "none";
-	document.getElementsByClassName('experiment')[0].style.display = "none";
-	document.getElementById('heading').innerHTML = "Theory";
+var pos1 = require(['pos']);
+var words = new pos1.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); //You have to enter the sentences here
+var tagger = new pos1.Tagger();
+var taggedWords = tagger.tag(words);
+for (i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+    console.log(word + " /" + tag);
 }
+
+
+function hideClass(cl){
+	document.getElementsByClassName(cl)[0].style.display = "none";
+}
+function showClass(cl){
+	document.getElementsByClassName(cl)[0].style.display = "block";
+}
+function hideAllClass(){
+	hideClass('introduction');
+	hideClass('theory');
+	hideClass('objective');
+	hideClass('experiment');
+	hideClass('quiz');
+	hideClass('procedure');
+	hideClass('readings');
+}
+
 function intro(){
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	document.getElementsByClassName('experiment')[0].style.display = "none";
-	document.getElementsByClassName('introduction')[0].style.display = "block";
+	hideAllClass();
+	showClass('introduction');
 	document.getElementById('heading').innerHTML = "Introduction";
 }
+
+function theory() {
+	hideAllClass();
+	showClass('theory');
+	document.getElementById('heading').innerHTML = "Theory";
+}
+function objective(){
+	hideAllClass();
+	showClass('objective');
+	document.getElementById('heading').innerHTML = "Objective";	
+}
 function experiment(){
-	document.getElementsByClassName('theory')[0].style.display = "none";
-	document.getElementsByClassName('introduction')[0].style.display = "none";
-	document.getElementsByClassName('experiment')[0].style.display = "block";
+	hideAllClass();
+	showClass('experiment');
 	document.getElementById('heading').innerHTML = "Experiment";	
 }
+
+function quiz(){
+	hideAllClass();
+	showClass('quiz');
+	document.getElementById('heading').innerHTML = "Quizzes";	
+}
+function procedure(){
+	hideAllClass();
+	showClass('procedure');
+	document.getElementById('heading').innerHTML = "Procedure";	
+}
+function readings(){
+	hideAllClass();
+	showClass('readings');
+	document.getElementById('heading').innerHTML = "Further Readings";	
+}
+
+
 var lan = "";
 function showLan(){
 	lan = document.getElementById("lan").value;
@@ -96,5 +145,4 @@ function showTable(){
 		document.getElementById('sub').style.display = "block";
 		}
 	}
-
 }
