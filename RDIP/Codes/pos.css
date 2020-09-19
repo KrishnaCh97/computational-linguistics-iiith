@@ -176,4 +176,7 @@ display: inline;
 	font:italic;
 	font-size: small;
 }
-.experiment
+#getAns,#hideAns{
+	display: none;
+	margin: auto;
+}
