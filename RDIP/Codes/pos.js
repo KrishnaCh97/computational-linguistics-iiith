@@ -4,17 +4,34 @@ var EngAns = [["determiner","noun","verb","determiner","noun"],["pronoun","verb"
 
 var HinAns = [["noun","postposition","noun","postposition","postposition","noun","verb"],["adjective","noun","noun","adverb","verb"],["noun","postposition","noun","adjective","verb","verb"],["interjection","pronoun","adjective","verb"],["noun","postposition","noun","verb","verb"]];
 
-var pos1 = require(['pos']);
-var words = new pos1.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); //You have to enter the sentences here
-var tagger = new pos1.Tagger();
-var taggedWords = tagger.tag(words);
-for (i in taggedWords) {
-    var taggedWord = taggedWords[i];
-    var word = taggedWord[0];
-    var tag = taggedWord[1];
-    console.log(word + " /" + tag);
-}
+/*require.config({
+	paths:{
+		"brill":"../Libraries/node_modules/pos/BrillTransformationRules",
+		"index":"../Libraries/node_modules/pos/index",
+		"lexer":"../Libraries/node_modules/pos/lexer",
+		"lexicon":"../Libraries/node_modules/pos/lexicon",
+		"POSTagger":"../Libraries/node_modules/pos/POSTagger",
+		"test":"../Libraries/node_modules/pos/test",
+		"tagger":"../Libraries/node_modules/pos/test/tagger"
+	}
+});
+require(['lexicon','brill','index','lexer','POSTagger','tagger'],function(x){
+	console.log(x);
+});
 
+function init() {
+	var pos1 = require(['pos']);
+	var words = new pos1.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); //You have to enter the sentences here
+	var tagger = new pos1.Tagger();
+	var taggedWords = tagger.tag(words);
+	for (i in taggedWords) {
+		var taggedWord = taggedWords[i];
+		var word = taggedWord[0];
+		var tag = taggedWord[1];
+		console.log(word + " /" + tag);
+	}
+}
+*/
 
 function hideClass(cl){
 	document.getElementsByClassName(cl)[0].style.display = "none";
@@ -93,10 +110,8 @@ function readings(){
 var lan = "";
 function showLan(){
 	lan = document.getElementById("lan").value;
-	clear('instr');
-	clear('lexTable');
-	hideElem('sub');
-	hideElem("getAns");
+	clearAll();
+	
 	if(lan==="select language"){
 		alert("Select Language");
 		return false;
@@ -113,7 +128,7 @@ var sent ="";
 var selectedSent = [];
 
 function showTable(){
-
+	hideElem('hideAns');
 	sent = document.getElementById('sent').value;
 	if(sent==="select sentence"){
 		alert("Select sentence");
