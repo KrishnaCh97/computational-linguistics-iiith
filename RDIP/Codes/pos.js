@@ -58,7 +58,19 @@ function experiment(){
 	hideAllClass();
 	showClass('experiment');
 	document.getElementById('heading').innerHTML = "Experiment";
-	hideElem("getAns");	
+	clearAll();
+
+}
+function clearAll(){
+	clear("selectedLan");
+	clear("instr");
+	clear("lexTable");
+	hideElem("sub");
+	hideElem("getAns");
+	hideElem("hideAns");
+}
+function clear(elem){
+	document.getElementById(elem).innerHTML = "";
 }
 
 function quiz(){
@@ -81,9 +93,10 @@ function readings(){
 var lan = "";
 function showLan(){
 	lan = document.getElementById("lan").value;
-	document.getElementById('instr').innerHTML="";
-	document.getElementById('lexTable').innerHTML ="";
-	document.getElementById('sub').style.display = "none";
+	clear('instr');
+	clear('lexTable');
+	hideElem('sub');
+	hideElem("getAns");
 	if(lan==="select language"){
 		alert("Select Language");
 		return false;
